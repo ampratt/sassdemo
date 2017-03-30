@@ -1,0 +1,70 @@
+nav {
+	header & {
+		background-color: darken($blue, 15%);
+	}
+
+	// .container {
+	// 	display: table-cell;
+	// 	padding: 0;
+	// }
+
+	.branding {
+		float: left;
+		display: none;
+		@include break(1100px) {
+			display: block;
+		}
+	}
+
+	.branding h1 {
+		font-size: 2.75rem;
+		overflow: hidden;
+		margin: 0;
+		padding-left: 20px;
+		color: $yellow;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+	}
+
+	ul li {
+		@include break(790px) {
+			float: right;
+		}
+		padding: 10px 5px;
+	}
+
+	ul li a {
+		text-decoration: none;
+		padding: 10px 5px;
+		color: $color-backgrounds;
+
+		&:hover {			
+			color: $yellow;
+		}
+
+		header &:hover {
+			background-color: darken($blue, 20%);
+		}
+
+		footer & {
+			color: white;
+		}
+	}
+	footer & {
+		margin-top:20px;
+		min-height: 200px;
+		background-color: darken($blue, 15%);
+
+		@include break(0, 500px) {
+			display: none;
+		}
+		@include break(500, 1500px) {
+			display: block;
+		}
+	}
+}

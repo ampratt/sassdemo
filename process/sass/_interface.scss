@@ -1,0 +1,93 @@
+$color-btn-text: $color-backgrounds;
+// $color-btn-default: $color-main;
+// $color-btn-hot: $red;
+// $color-btn-cool: $blue;
+$roundness: 20px 0 20px 0;
+
+//invisible class
+%btn {
+	display: inline-block;
+	padding: 6px 12px;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: none;
+	border-radius: 4px;
+	font-family: $font-highlight;
+	user-select: none;
+	color: $color-btn-text;
+}
+
+$color-btn-names: 'default', 'hot', 'cool';
+$color-btn-values: $color-main, $red, $blue;
+
+/*associative array =>[map] data type*/
+$color-btns: (
+	default: $color-main,
+	hot: $red,
+	cool: $blue,
+	awesome: $purple
+);
+
+/*going through a list with @each*/
+@each $key, $value in $color-btns {
+	.btn-#{$key} {
+		@extend %btn;
+		background-color: $value;
+	}
+}
+
+// /*going through a list with @each*/
+// @each $name in $color-btn-names {
+// 	//declare varaiable
+// 	$i: index($color-btn-names, $name);
+// 	// calculated element based on name
+// 	.btn-#{$name} {
+// 		@extend %btn;
+// 		background-color: nth($color-btn-values, $i);
+// 	}
+// }
+
+/**/
+// .btn-default {
+// 	@extend %btn;
+// 	background: $color-btn-default;
+// }
+// .btn-hot {
+// 	@extend %btn;
+// 	background: $color-btn-hot;
+// }
+// .btn-cool {
+// 	@extend %btn;
+// 	background: $color-btn-cool;
+// }
+
+
+
+// $color-btns: (
+// 	default: $color-main,
+// 	hot: $red,
+// 	cool: $blue,
+// 	awesome: $purple
+// );
+
+// @each $key, $value in $color-btns {
+// 	.btn-#{$key} {
+// 		@extend %btn;
+// 		background-color: $value;
+// 	}
+// }
+
+.grid {
+	@include clearfix;
+	.item {
+		float: left;  //parent must be cleared or it will not know anything about whats inside
+		@include imagegrid(4, 1%);
+	}
+	img {
+		display: block;
+		border-radius: nth($roundness, 1); // NOT zer oindexed
+		max-width: 100%;
+	}
+}
