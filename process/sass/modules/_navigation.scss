@@ -11,7 +11,7 @@ nav {
 	.branding {
 		float: left;
 		display: none;
-		@include break(1100px) {
+		@include break(1000px) {
 			display: block;
 		}
 	}
