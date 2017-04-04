@@ -18,3 +18,6 @@ Testing around with the main features of Sass including: variables, nesting, par
 4. Run `> npm-install` to install the project dependencies
 5. Install gulp.js and run `> npm install -g gulp`
 5. Run the Gulp command to launch the project dev server `> gulp`
+
+
+credit goes to [lynda.com](www.lynda.com) for original content
